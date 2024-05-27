@@ -32,7 +32,7 @@ const Login = () => {
               value={form.password}
               handleChangeText={(e: any) => setForm({ ...form, password: e })} placeholder={undefined}            />
 
-            <View>
+            <View style={styles.btnContainer}>
               <CustomButton
                 title="Login"
                 handlePress={() => router.push("/dashboard")}
@@ -60,12 +60,11 @@ export default Login;
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
     height: "90%",
     justifyContent: "center",
-    paddingHorizontal: 10,
+    padding: 10,
   },
-  logo: { width: 300, height: 300, margin: 50 },
+  logo: { width: 250, height: 250, margin: "auto" },
   thead: {
     fontSize: 23,
     fontWeight: "bold",
@@ -75,6 +74,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
     color: "black",
+  },
+  btnContainer: {
+    flexDirection: "row",
+    width: 300
   },
   forgot: {
     marginHorizontal: "auto",

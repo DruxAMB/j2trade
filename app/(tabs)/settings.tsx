@@ -7,6 +7,7 @@ import FormField from "@/components/FormField";
 import CustomButton from "@/components/navigation/CustomButton";
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Link } from "expo-router";
+import UploadButton from "@/components/UploadProfile";
 
 const Settings = () => {
   const [form, setForm] = useState({
@@ -52,13 +53,7 @@ const Settings = () => {
           <View style={styles.containerItem}>
             <Text>Profile picture </Text>
             {/* <Image source={Logo} style={styles.logo} /> */}
-            <View style={styles.btnContainer}>
-              <CustomButton
-                title="Choose File"
-                handlePress={() => console.log("Hello")}
-                // isLoading={isSubmitting}
-              />
-            </View>
+            <UploadButton />
             <FormField
               title="Username"
               value={form.username}

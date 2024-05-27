@@ -10,7 +10,8 @@ const FormField = ({
 
   return (
     <View style={styles.form}>
-      <Text>{title}</Text>
+        
+      <Text style={{ marginVertical: 3 }}>{title}</Text>
       <View>
         <TextInput style={styles.input}
           value={value}
@@ -32,6 +33,7 @@ const styles = StyleSheet.create({
         height: 40,
         borderColor: "#9BB3A0",
         borderWidth: 1,
-        borderRadius: 5
+        borderRadius: 5,
+        padding: 5
     }
 });
