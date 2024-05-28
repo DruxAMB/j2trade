@@ -1,60 +1,22 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
-
 import Logo from "../assets/images/logo.png";
+import { Link } from "expo-router";
 
 const CryptoSection = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.containerItem}>
-        <Image source={Logo} style={styles.image} />
-        <View style={styles.textContainer}>
-          <Text style={styles.tPara}>Buy Crpto</Text>
-          <Text style={styles.tPara2}>Btc,Eth,USDT,UDC,TRX,LTC & More</Text>
-        </View>
-      </View>
-      <View style={styles.containerItem}>
-        <Image source={Logo} style={styles.image} />
-        <View style={styles.textContainer}>
-          <Text style={styles.tPara}>Buy Crpto</Text>
-          <Text style={styles.tPara2}>Btc,Eth,USDT,UDC,TRX,LTC & More</Text>
-        </View>
-      </View>
-      <View style={styles.containerItem}>
-        <Image source={Logo} style={styles.image} />
-        <View style={styles.textContainer}>
-          <Text style={styles.tPara}>Buy Crpto</Text>
-          <Text style={styles.tPara2}>Btc,Eth,USDT,UDC,TRX,LTC & More</Text>
-        </View>
-      </View>
-      <View style={styles.containerItem}>
-        <Image source={Logo} style={styles.image} />
-        <View style={styles.textContainer}>
-          <Text style={styles.tPara}>Buy Crpto</Text>
-          <Text style={styles.tPara2}>Btc,Eth,USDT,UDC,TRX,LTC & More</Text>
-        </View>
-      </View>
-      <View style={styles.containerItem}>
-        <Image source={Logo} style={styles.image} />
-        <View style={styles.textContainer}>
-          <Text style={styles.tPara}>Buy Crpto</Text>
-          <Text style={styles.tPara2}>Btc,Eth,USDT,UDC,TRX,LTC & More</Text>
-        </View>
-      </View>
-      <View style={styles.containerItem}>
-        <Image source={Logo} style={styles.image} />
-        <View style={styles.textContainer}>
-          <Text style={styles.tPara}>Buy Crpto</Text>
-          <Text style={styles.tPara2}>Btc,Eth,USDT,UDC,TRX,LTC & More</Text>
-        </View>
-      </View>
-      <View style={styles.containerItem}>
-        <Image source={Logo} style={styles.image} />
-        <View style={styles.textContainer}>
-          <Text style={styles.tPara}>Buy Crpto</Text>
-          <Text style={styles.tPara2}>Btc,Eth,USDT,UDC,TRX,LTC & More</Text>
-        </View>
-      </View>
+      {Array.from({ length: 10 }).map((_, index) => (
+        <Link href="/history" key={index} >
+          <View style={styles.containerItem}>
+            <Image source={Logo} style={styles.image} />
+            <View style={styles.textContainer}>
+              <Text style={styles.tPara}>Buy Crypto</Text>
+              <Text style={styles.tPara2}>Btc,Eth,USDT,UDC,TRX,LTC & More</Text>
+            </View>
+          </View>
+        </Link>
+      ))}
     </View>
   );
 };
@@ -63,17 +25,15 @@ export default CryptoSection;
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
-    top: 110,
     backgroundColor: "white",
-    width: "100%",
+    width: "95%",
     padding: 10,
-    borderRadius: 12
+    alignSelf: "center",
+    gap: 20
   },
   containerItem: {
     flexDirection: "row",
     gap: 15,
-    marginVertical: 15
   },
   image: {
     width: 60,
@@ -81,7 +41,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   textContainer: {
-    justifyContent: "center"
+    justifyContent: "center",
   },
   tPara: {
     fontSize: 23,
@@ -90,5 +50,5 @@ const styles = StyleSheet.create({
   },
   tPara2: {
     fontSize: 16,
-  }
+  },
 });

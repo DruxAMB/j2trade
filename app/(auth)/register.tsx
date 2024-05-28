@@ -24,8 +24,10 @@ const SignUp = () => {
   // const submit = () => router.push("/dashboard");
 
   return (
-    <SafeAreaView style={{ backgroundColor: "white" }}>
-      <ScrollView contentContainerStyle={{ height: "100%" }}>
+    <ScrollView
+      contentContainerStyle={{ backgroundColor: "white" }}
+    >
+      <SafeAreaView>
         <View style={styles.container}>
           <Image source={Logo} style={styles.logo} />
           <View>
@@ -76,17 +78,20 @@ const SignUp = () => {
               }
               placeholder={undefined}
             />
-            <View>
-            <CustomButton
+            <View style={styles.btnContainer}>
+              <CustomButton
                 title="Register"
                 handlePress={() => router.push("/dashboard")}
                 // isLoading={isSubmitting}
               />
             </View>
           </View>
+          <View style={styles.registered}>
+            <Link href="/login">Already have an account?</Link>
+          </View>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ScrollView>
   );
 };
 
@@ -98,6 +103,7 @@ const styles = StyleSheet.create({
     height: "90%",
     justifyContent: "center",
     paddingHorizontal: 10,
+    paddingVertical: 50
   },
   logo: {
     width: 250,
@@ -110,18 +116,18 @@ const styles = StyleSheet.create({
     color: "black",
   },
   btnContainer: {
-    backgroundColor: "#18ba30",
     width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-    height: 45,
-    borderRadius: 10,
-    marginTop: 5,
+    height: 42,
   },
   btnText: {
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 20,
     color: "white",
-  }
+  },
+  registered: {
+    marginHorizontal: "auto",
+    marginVertical: 5,
+    textDecorationLine: "underline",
+  },
 });

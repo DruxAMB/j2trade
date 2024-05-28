@@ -3,8 +3,8 @@ import React from 'react'
 
 const Bills = () => {
   return (
-    <View>
-      <Text>Bills</Text>
+    <View style={{ margin: "auto", padding: 10}}>
+      <Text style={{textAlign: "center", fontSize: 40, fontWeight: "bold"}}>Bill is Payment Coming Soon </Text>
     </View>
   )
 }

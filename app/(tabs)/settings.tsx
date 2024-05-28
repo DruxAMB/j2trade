@@ -8,6 +8,7 @@ import CustomButton from "@/components/navigation/CustomButton";
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Link } from "expo-router";
 import UploadButton from "@/components/UploadProfile";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Settings = () => {
   const [form, setForm] = useState({
@@ -26,8 +27,8 @@ const Settings = () => {
   // const submit = () => router.push("/dashboard");
 
   return (
-    // <SafeAreaView style={{  }}>
-      <ScrollView contentContainerStyle={{ flex: 1, height: "100%" }}>
+    <SafeAreaView  style={{ backgroundColor: "white",height: "100%" }}>
+      <ScrollView>
         <View style={styles.container}>
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
@@ -43,16 +44,17 @@ const Settings = () => {
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" , marginVertical: 12}}
           >
-            <Text style={{fontSize: 20, fontWeight: 500}}>Profile setting</Text>
-            <View style={{ flexDirection: "row", gap: 3 }}>
-              <TabBarIcon size={20} name="shield-outline" />
-              <Text>Change password</Text>
-            </View>
+            <Text style={{fontSize: 20, fontWeight: "500"}}>Profile setting</Text>
+            <Link href="/register" >
+              <View style={{ flexDirection: "row", gap: 3 }}>
+                <TabBarIcon size={20} name="shield-outline" />
+                <Text>Change password</Text>
+              </View>
+            </Link>
           </View>
 
           <View style={styles.containerItem}>
             <Text>Profile picture </Text>
-            {/* <Image source={Logo} style={styles.logo} /> */}
             <UploadButton />
             <FormField
               title="Username"
@@ -115,7 +117,7 @@ const Settings = () => {
           </View>
         </View>
       </ScrollView>
-    // </SafeAreaView>
+  </SafeAreaView>
   );
 };
 
@@ -125,7 +127,9 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     justifyContent: "center",
-    padding: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 35,
+    paddingBottom: 50
   },
   containerItem: {
     borderRadius: 10,
@@ -140,14 +144,10 @@ const styles = StyleSheet.create({
   // },
   tpara: {
     fontSize: 15,
-    fontWeight: 500,
+    fontWeight: "500",
   },
   btnContainer: {
-    backgroundColor: "#18ba30",
-    width: "100%",
-    alignItems: "center",
-    height: 45,
-    borderRadius: 10,
-    marginVertical: 10,
+    flexDirection: "row",
+    height: 42,
   }
 });

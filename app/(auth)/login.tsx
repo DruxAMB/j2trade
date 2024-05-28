@@ -14,10 +14,9 @@ const Login = () => {
     password: "",
   });
 
-
   return (
-    <SafeAreaView style={{ backgroundColor: "white" }}>
-      <ScrollView contentContainerStyle={{ height: "100%" }}>
+    <SafeAreaView style={{ backgroundColor: "white",height: "100%" }}>
+      <ScrollView>
         <View style={styles.container}>
           <Image source={Logo} style={styles.logo} />
           <View>
@@ -26,11 +25,15 @@ const Login = () => {
             <FormField
               title="Email"
               value={form.email}
-              handleChangeText={(e: any) => setForm({ ...form, email: e })} placeholder={undefined}            />
+              handleChangeText={(e: any) => setForm({ ...form, email: e })}
+              placeholder={undefined}
+            />
             <FormField
               title="Password"
               value={form.password}
-              handleChangeText={(e: any) => setForm({ ...form, password: e })} placeholder={undefined}            />
+              handleChangeText={(e: any) => setForm({ ...form, password: e })}
+              placeholder={undefined}
+            />
 
             <View style={styles.btnContainer}>
               <CustomButton
@@ -43,11 +46,10 @@ const Login = () => {
                 handlePress={() => router.push("/register")}
                 // isLoading={isSubmitting}
               />
-
             </View>
 
-            <View style={styles.forgot} >
-              <Link href="/register" >Forgot your password?</Link>
+            <View style={styles.forgot}>
+              <Link href="/register">Forgot your password?</Link>
             </View>
           </View>
         </View>
@@ -60,7 +62,6 @@ export default Login;
 
 const styles = StyleSheet.create({
   container: {
-    height: "90%",
     justifyContent: "center",
     padding: 10,
   },
@@ -77,10 +78,11 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
     flexDirection: "row",
-    width: 300
+    gap: 5
   },
   forgot: {
     marginHorizontal: "auto",
-    marginVertical: 5
-  }
+    marginVertical: 5,
+    textDecorationLine: "underline"
+  },
 });

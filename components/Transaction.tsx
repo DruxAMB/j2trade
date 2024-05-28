@@ -1,9 +1,9 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import React from "react";
 
 import Logo from "../assets/images/logo.png";
 
-const Transaction = () => {
+const Transaction = ({bought}) => {
+
   return (
     <View>
       <View style={styles.containerItem}>
@@ -12,7 +12,7 @@ const Transaction = () => {
           <Text style={styles.text}>USA AMAZON (25-49)</Text>
           <Text style={styles.text}>22-03-2024</Text>
         </View>
-        <Text style={styles.text2}>- #25,200.00</Text>
+        <Text style={[styles.text2, bought && styles.text2Active]}>{bought ? "+" : "-" } #25,200.00</Text>
       </View>
       <View style={styles.containerItem}>
         <Image source={Logo} style={styles.image} />
@@ -20,7 +20,7 @@ const Transaction = () => {
           <Text style={styles.text}>USA AMAZON (25-49)</Text>
           <Text style={styles.text}>22-03-2024</Text>
         </View>
-        <Text style={styles.text2}>- #25,200.00</Text>
+        <Text style={[styles.text2, bought && styles.text2Active]}>{bought ? "+" : "-" } #25,200.00</Text>
       </View>
       <View style={styles.containerItem}>
         <Image source={Logo} style={styles.image} />
@@ -28,7 +28,7 @@ const Transaction = () => {
           <Text style={styles.text}>USA AMAZON (25-49)</Text>
           <Text style={styles.text}>22-03-2024</Text>
         </View>
-        <Text style={styles.text2}>- #25,200.00</Text>
+        <Text style={[styles.text2, bought && styles.text2Active]}>{bought ? "+" : "-" } #25,200.00</Text>
       </View>
       <View style={styles.containerItem}>
         <Image source={Logo} style={styles.image} />
@@ -36,7 +36,7 @@ const Transaction = () => {
           <Text style={styles.text}>USA AMAZON (25-49)</Text>
           <Text style={styles.text}>22-03-2024</Text>
         </View>
-        <Text style={styles.text2}>- #25,200.00</Text>
+        <Text style={[styles.text2, bought && styles.text2Active]}>{bought ? "+" : "-" } #25,200.00</Text>
       </View>
       <View style={styles.containerItem}>
         <Image source={Logo} style={styles.image} />
@@ -44,7 +44,7 @@ const Transaction = () => {
           <Text style={styles.text}>USA AMAZON (25-49)</Text>
           <Text style={styles.text}>22-03-2024</Text>
         </View>
-        <Text style={styles.text2}>- #25,200.00</Text>
+        <Text style={[styles.text2, bought && styles.text2Active]}>{bought ? "+" : "-" } #25,200.00</Text>
       </View>
       <View style={styles.containerItem}>
         <Image source={Logo} style={styles.image} />
@@ -52,7 +52,7 @@ const Transaction = () => {
           <Text style={styles.text}>USA AMAZON (25-49)</Text>
           <Text style={styles.text}>22-03-2024</Text>
         </View>
-        <Text style={styles.text2}>- #25,200.00</Text>
+        <Text style={[styles.text2, bought && styles.text2Active]}>{bought ? "+" : "-" } #25,200.00</Text>
       </View>
       <View style={styles.containerItem}>
         <Image source={Logo} style={styles.image} />
@@ -60,7 +60,7 @@ const Transaction = () => {
           <Text style={styles.text}>USA AMAZON (25-49)</Text>
           <Text style={styles.text}>22-03-2024</Text>
         </View>
-        <Text style={styles.text2}>- #25,200.00</Text>
+        <Text style={[styles.text2, bought && styles.text2Active]}>{bought ? "+" : "-" } #25,200.00</Text>
       </View>
     </View>
   );
@@ -76,11 +76,12 @@ const styles = StyleSheet.create({
   containerItem: {
     flexDirection: "row",
     gap: 15,
-    marginVertical: 15,
+    marginVertical: 20,
     borderColor: "white",
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 10,
     justifyContent: "space-around",
+    alignItems: "center"
   },
   image: {
     width: 55,
@@ -99,6 +100,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     color: "red",
+    textAlign: "center",
+    alignContent: "center",
+  },
+  text2Active: {
+    fontSize: 14,
+    fontWeight: "bold",
+    color: "#F2BD07",
     textAlign: "center",
     alignContent: "center",
   },

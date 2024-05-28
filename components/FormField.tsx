@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 
 const FormField = ({
   title,
@@ -7,6 +7,8 @@ const FormField = ({
   placeholder,
   handleChangeText,
 }) => {
+
+  const [showPassword, setShowPassword] = useState(false)
 
   return (
     <View style={styles.form}>
@@ -17,6 +19,7 @@ const FormField = ({
           value={value}
           placeholder={placeholder}
           onChangeText={handleChangeText}
+          secureTextEntry={title === "Password" && !showPassword}
         />
       </View>
     </View>

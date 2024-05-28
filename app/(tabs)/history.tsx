@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Link } from "expo-router";
 import { ScrollView } from "react-native-gesture-handler";
 import Transaction from "@/components/Transaction";
 import CustomButton from "@/components/navigation/CustomButton";
+import React, { useState } from "react";
 
 const History = () => {
+
+  const [bought, setBought] = useState(false)
+
   return (
     <ScrollView>
       <View style={styles.containerItem}>
@@ -21,12 +24,12 @@ const History = () => {
         </View>
         <Text style={styles.tpara2}>Transaction History</Text>
         <View style={styles.btnContainer}>
-          <View style={{width: 220, flexDirection: "row"}}>
-            <CustomButton title="Sold" handlePress={() => console.log("er")} />
-            <CustomButton title="Bought" handlePress={() => console.log("er")} />
+          <View style={{ flexDirection: "row", gap: 5 }}>
+            <CustomButton title="Sold" handlePress={() => setBought(false)} />
+            <CustomButton title="Bought" handlePress={() => setBought(true)} />
           </View>
         </View>
-        <Transaction />
+        <Transaction bought={bought} />
       </View>
     </ScrollView>
   );
@@ -37,7 +40,8 @@ export default History;
 const styles = StyleSheet.create({
   containerItem: {
     backgroundColor: "#23940c",
-    padding: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 35,
   },
   header: {
     flex: 1,
